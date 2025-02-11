@@ -1,0 +1,80 @@
+@model CreateOrderViewModel
+
+@{
+    ViewData["Title"] = "Create Order";
+    Layout = "_SectionLayout";
+}
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="VehicleId"></label>
+        <input type="text" class="form-control" asp-for="VehicleId">
+        <span asp-validation-for="VehicleId" class="text-danger"></span>
+    </div>
+
+    <div id="components-container">
+        @{
+            if (!Model.Components.Any())
+            {
+                foreach (var orderComponentViewModel in Model.Components)
+                {
+                    <div class="component-group">
+                        <div class="form-group">
+                            <label>Component Id</label>
+                            <input type="number" class="form-control" name="Components[0].Id" value="@orderComponentViewModel.Id">
+                            <span asp-validation-for="Components[0].Id" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Quantity</label>
+                            <input type="number" class="form-control" name="Components[0].Quantity" value="@orderComponentViewModel.Quantity">
+                            <span asp-validation-for="Components[0].Quantity" class="text-danger"></span>
+                        </div>
+                    </div>
+                }
+            }
+            else {
+                <div class="component-group">
+                    <div class="form-group">
+                        <label>Component Id</label>
+                        <input type="number" class="form-control" name="Components[0].Id">
+                        <span asp-validation-for="Components[0].Id" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Quantity</label>
+                        <input type="number" step="0.01" class="form-control" name="Components[0].Quantity">
+                        <span asp-validation-for="Components[0].Quantity" class="text-danger"></span>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+
+    <button type="button" id="add-component" class="btn btn-secondary">Add Component</button>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+@section Scripts {
+    <script>
+        document.getElementById('add-component').addEventListener('click', function () {
+            let container = document.getElementById('components-container');
+            let index = container.getElementsByClassName('component-group').length;
+
+            let newGroup = document.createElement('div');
+            newGroup.className = 'component-group';
+            newGroup.innerHTML = `
+                <div class="form-group">
+                    <label>Component Name</label>
+                    <input type="number" class="form-control" name="Components[${index}].Id">
+                    <span asp-validation-for="Components[${index}].Id" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label>Quantity</label>
+                    <input type="number" class="form-control" name="Components[${index}].Quantity">
+                    <span asp-validation-for="Components[${index}].Quantity" class="text-danger"></span>
+                </div>
+            `;
+
+            container.appendChild(newGroup);
+        });
+    </script>
+}

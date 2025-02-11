@@ -1,0 +1,17 @@
+@model autopark.DAL.Entities.Component;
+
+@{
+    ViewData["Title"] = "Update Component";
+    Layout = "_SectionLayout";
+}
+
+<h1>Edit data</h1>
+
+<form asp-action="Update" method="post">
+    <div class="form-group">
+        <label for="Name">Name</label>
+        <input type="number" class="form-control" asp-for="Name">
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -1,0 +1,18 @@
+@model autopark.DAL.Entities.VehicleType
+
+@{
+    ViewData["Title"] = "Create Vehicle Type";
+    Layout = "_SectionLayout";
+}
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" asp-for="Name">
+        <span asp-validation-for="Name" class="text-danger"></span>
+        <label>TaxCoefficient</label>
+        <input type="number" step="0.01" class="form-control" asp-for="TaxCoefficient">
+        <span asp-validation-for="TaxCoefficient" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

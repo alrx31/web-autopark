@@ -1,0 +1,36 @@
+@model autopark.DAL.Entities.Vehicle
+
+@{
+    ViewData["Title"] = "Create Vehicle";
+    Layout = "_SectionLayout";
+}
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label>VehicleTypeId</label>
+        <input type="number" class="form-control" asp-for="VehicleTypeId">
+        <span asp-validation-for="VehicleTypeId" class="text-danger"></span>
+        <label>Model</label>
+        <input type="text" class="form-control" asp-for="Model">
+        <span asp-validation-for="Model" class="text-danger"></span>
+        <label>RegistrationNumber</label>
+        <input type="text" class="form-control" asp-for="RegistrationNumber">
+        <span asp-validation-for="RegistrationNumber" class="text-danger"></span>
+        <label>FuelConsumption</label>
+        <input type="text" class="form-control" asp-for="FuelConsumption">
+        <span asp-validation-for="FuelConsumption" class="text-danger"></span>
+        <label>Weight</label>
+        <input type="number" class="form-control" asp-for="Weight">
+        <span asp-validation-for="Weight" class="text-danger"></span>
+        <label>Year</label>
+        <input type="number" class="form-control" asp-for="Year">
+        <span asp-validation-for="Year" class="text-danger"></span>
+        <label>Mileage</label>
+        <input type="number" class="form-control" asp-for="Mileage">
+        <span asp-validation-for="Mileage" class="text-danger"></span>
+        <label>Color</label>
+        <input type="text" class="form-control" asp-for="Color">
+        <span asp-validation-for="Color" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

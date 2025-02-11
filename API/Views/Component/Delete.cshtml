@@ -1,0 +1,14 @@
+@model autopark.DAL.Entities.Component
+
+@{
+    ViewData["Title"] = "Delete Component";
+    Layout = "_SectionLayout";
+}
+
+<h1>Are you sure?</h1>
+<h2>To delete component @Model.Name</h2>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="ComponentId"/>
+    <input type="submit" class="btn btn-primary" value="Submit" />
+</form>

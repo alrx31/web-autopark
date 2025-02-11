@@ -1,0 +1,28 @@
+@model IEnumerable<autopark.DAL.Entities.Component>;
+
+@{
+    ViewData["Title"] = "Components";
+    Layout = "_SectionLayout";
+}
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Component ID</th>
+        <th>Component Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var m in Model)
+    {
+        <tr>
+            <td>@m.ComponentId</td>
+            <td>@m.Name</td>
+            <td>
+                <a class="table-delete" asp-controller="Component" asp-action="Delete" asp-route-id="@m.ComponentId">Delete</a>
+                <a class="table-delete" asp-controller="Component" asp-action="Update" asp-route-id="@m.ComponentId">Edit</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

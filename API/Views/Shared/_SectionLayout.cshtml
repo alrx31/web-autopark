@@ -1,0 +1,15 @@
+@{
+    Layout = "_Layout";
+    var controllerName = ViewContext.RouteData.Values["controller"]?.ToString();
+}
+
+<h2>Choose menu options for @controllerName</h2>
+
+<nav class="nav">
+    <a class="nav-link text-dark nav-item" asp-controller="@controllerName" asp-action="Index">Show</a>
+    <a class="nav-link text-dark nav-item" asp-controller="@controllerName" asp-action="Create">Create</a>
+</nav>
+
+<h3>@RenderBody()</h3>
+
+@await RenderSectionAsync("Scripts", required:false)

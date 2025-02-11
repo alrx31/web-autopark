@@ -1,0 +1,15 @@
+@model autopark.DAL.Entities.Order
+
+@{
+    ViewData["Title"] = "Delete Order";
+    Layout = "_SectionLayout";
+}
+
+<h1>Are you sure?</h1>
+<h2>To delete @Model.OrderId by @Model.Date.ToShortDateString()</h2>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="OrderId"/>
+    <input type="submit" class="btn btn-primary" value="Submit" />
+    <label >@ViewData["OrderId_Error"]</label>
+</form>

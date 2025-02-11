@@ -1,0 +1,14 @@
+@model autopark.DAL.Entities.VehicleType
+
+@{
+    ViewData["Title"] = "Delete Vehicle Type";
+    Layout = "_SectionLayout";
+}
+
+<h1>Are you sure?</h1>
+<h2>To delete @Model.Name</h2>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="VehicleTypeId"/>
+    <input type="submit" class="btn btn-primary" value="Submit" />
+</form>

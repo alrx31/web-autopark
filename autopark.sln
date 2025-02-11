@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{3861B3EE-4AEA-4A0E-8CA9-021B85BB6381}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "autopark.DAL", "autopark.DAL\autopark.DAL.csproj", "{AFCC111F-EE8B-42C5-A143-5741CDD63DEA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{712B1879-6D37-42B4-A8A1-D1608BB33109}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3861B3EE-4AEA-4A0E-8CA9-021B85BB6381}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3861B3EE-4AEA-4A0E-8CA9-021B85BB6381}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3861B3EE-4AEA-4A0E-8CA9-021B85BB6381}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3861B3EE-4AEA-4A0E-8CA9-021B85BB6381}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFCC111F-EE8B-42C5-A143-5741CDD63DEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFCC111F-EE8B-42C5-A143-5741CDD63DEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFCC111F-EE8B-42C5-A143-5741CDD63DEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFCC111F-EE8B-42C5-A143-5741CDD63DEA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3861B3EE-4AEA-4A0E-8CA9-021B85BB6381} = {712B1879-6D37-42B4-A8A1-D1608BB33109}
+		{AFCC111F-EE8B-42C5-A143-5741CDD63DEA} = {712B1879-6D37-42B4-A8A1-D1608BB33109}
+	EndGlobalSection
+EndGlobal

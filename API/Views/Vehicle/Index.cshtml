@@ -1,0 +1,85 @@
+@{
+    ViewData["Title"] = "Vehicles";
+    Layout = "_SectionLayout";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-action="Index" asp-route-criteria="0" asp-route-direction="@(ViewBag.CurrentDirection == 0 ? 1 : 0)">
+                    Vehicle Id
+                    @(ViewBag.CurrentCriteria == 0 ? (ViewBag.CurrentDirection == 0 ? " ↑" : " ↓") : "")
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-criteria="1" asp-route-direction="@(ViewBag.CurrentDirection == 0 ? 1 : 0)">
+                    Vehicle Type Id
+                    @(ViewBag.CurrentCriteria == 1 ? (ViewBag.CurrentDirection == 0 ? " ↑" : " ↓") : "")
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-criteria="2" asp-route-direction="@(ViewBag.CurrentDirection == 0 ? 1 : 0)">
+                    Model
+                    @(ViewBag.CurrentCriteria == 2 ? (ViewBag.CurrentDirection == 0 ? " ↑" : " ↓") : "")
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-criteria="3" asp-route-direction="@(ViewBag.CurrentDirection == 0 ? 1 : 0)">
+                    Color
+                    @(ViewBag.CurrentCriteria == 3 ? (ViewBag.CurrentDirection == 0 ? " ↑" : " ↓") : "")
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-criteria="4" asp-route-direction="@(ViewBag.CurrentDirection == 0 ? 1 : 0)">
+                    Fuel Consumption
+                    @(ViewBag.CurrentCriteria == 4 ? (ViewBag.CurrentDirection == 0 ? " ↑" : " ↓") : "")
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-criteria="5" asp-route-direction="@(ViewBag.CurrentDirection == 0 ? 1 : 0)">
+                    Reg. Number
+                    @(ViewBag.CurrentCriteria == 5 ? (ViewBag.CurrentDirection == 0 ? " ↑" : " ↓") : "")
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-criteria="6" asp-route-direction="@(ViewBag.CurrentDirection == 0 ? 1 : 0)">
+                    Mileage
+                    @(ViewBag.CurrentCriteria == 6 ? (ViewBag.CurrentDirection == 0 ? " ↑" : " ↓") : "")
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-criteria="7" asp-route-direction="@(ViewBag.CurrentDirection == 0 ? 1 : 0)">
+                    Weight
+                    @(ViewBag.CurrentCriteria == 7 ? (ViewBag.CurrentDirection == 0 ? " ↑" : " ↓") : "")
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-criteria="8" asp-route-direction="@(ViewBag.CurrentDirection == 0 ? 1 : 0)">
+                    Year
+                    @(ViewBag.CurrentCriteria == 8 ? (ViewBag.CurrentDirection == 0 ? " ↑" : " ↓") : "")
+                </a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model)
+        {
+            <tr>
+                <td>@m.VehicleId</td>
+                <td>@m.VehicleTypeId</td>
+                <td>@m.Model</td>
+                <td>@m.Color</td>
+                <td>@m.FuelConsumption</td>
+                <td>@m.RegistrationNumber</td>
+                <td>@m.Mileage</td>
+                <td>@m.Weight</td>
+                <td>@m.Year</td>
+                <td>
+                    <a class="table-delete" asp-controller="Vehicle" asp-action="Delete" asp-route-id="@m.VehicleId">Delete</a>
+                    <a class="table-delete" asp-controller="Vehicle" asp-action="Update" asp-route-id="@m.VehicleId">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
