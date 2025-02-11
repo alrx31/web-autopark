@@ -17,4 +17,4 @@ Client
 
 IDE: JetBrains Rider (education only)
 
-For start application run your MS Server and change connection string and run in terminal <code>dotnet run</code> 
+For start application run your MS Server, run slq creation script and change connection string and run in terminal <code>dotnet run</code> 
